@@ -1,7 +1,5 @@
 library(dplyr)
-library(purrr)
 library(RPostgres)
-library(plyr)
 
 creds <- list(db_uid=getOption("db_uid"), db_pw=getOption("db_pw"))
 
