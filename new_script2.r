@@ -15,7 +15,6 @@ con <- dbConnect(drv=RPostgres::Postgres(),
 
 get_all <- function(...){
     tbls <- dbListTables(...)
-   
     o <- lapply(seq_along(tbls), function(x) dbReadTable(con, tbls[x]))
      names(o) <- tbls
      o
