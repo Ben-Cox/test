@@ -19,4 +19,8 @@ get_all <- function(...){
      o
 }
 
-get_all(con)
+tbls <- get_all(con)
+
+lapply(tbls,colnames)
+
+tbls$pets %>% left_join(tbls$owners, by=c("owner_id"="id")) %>% select(-contains("id"))
