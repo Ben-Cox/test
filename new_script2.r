@@ -12,7 +12,6 @@ con <- dbConnect(drv=RPostgres::Postgres(),
                  password=creds[[2]],
                  bigint="numeric")
 
-
 get_all <- function(...){
     tbls <- dbListTables(...)
     o <- lapply(seq_along(tbls), function(x) dbReadTable(con, tbls[x]))
